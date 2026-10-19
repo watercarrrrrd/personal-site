@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="石凌澜的个人展示网站，展示个人介绍、技能、项目与博客" />
+  <title>石凌澜 | 本科生</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 星空背景层：固定于最底层，不参与语义与无障碍 -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- 吸顶毛玻璃导航栏 -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <!-- 站点 Logo：内联 SVG 星形 + 姓名 -->
+      <a class="navbar__brand" href="#hero" aria-label="返回顶部">
+        <svg class="navbar__logo" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2l2.4 6.2L21 9l-5 4.4L17.4 20 12 16.4 6.6 20 8 13.4 3 9l6.6-.8L12 2z"
+                fill="currentColor" />
+        </svg>
+        <span>石凌澜</span>
+      </a>
+
+      <!-- 汉堡菜单按钮：仅移动端显示 -->
+      <button class="navbar__toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">
+        <span class="navbar__toggle-line"></span>
+        <span class="navbar__toggle-line"></span>
+        <span class="navbar__toggle-line"></span>
+      </button>
+
+      <!-- 导航菜单 -->
+      <nav class="navbar__menu" id="navMenu" aria-label="主导航">
+        <ul class="navbar__list">
+          <li class="navbar__item"><a class="navbar__link" href="#about">关于我</a></li>
+          <li class="navbar__item"><a class="navbar__link" href="#skills">技能</a></li>
+          <li class="navbar__item"><a class="navbar__link" href="#projects">项目</a></li>
+          <li class="navbar__item"><a class="navbar__link" href="#blog">博客</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero 首屏 -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <!-- 内联 SVG 字母头像：渐变圆形 + 首字母 -->
+        <svg class="hero__avatar" viewBox="0 0 120 120" role="img" aria-label="石凌澜的头像">
+          <defs>
+            <linearGradient id="avatarGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3B82F6" />
+              <stop offset="100%" stop-color="#8AB4FF" />
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="60" fill="url(#avatarGradient)" />
+          <text x="60" y="62" text-anchor="middle" dominant-baseline="middle"
+                fill="#ffffff" font-size="52" font-weight="600">S</text>
+        </svg>
+
+        <h1 class="hero__name">石凌澜</h1>
+        <p class="hero__title">本科生</p>
+        <p class="hero__intro">
+          专注于vibe-coding，热爱技术与产品体验优化
+        </p>
+
+        <!-- 双 CTA 按钮 -->
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#projects">
+            查看项目
+            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a class="btn btn--ghost" href="#footer">联系我</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section__title">关于我</h2>
+        <div class="about__content">
+          <p>
+            拥有前后端开发经验，熟悉原生前端技术栈与C# .NET技术栈，参与过手机酒店预订app、电子商城系统、电商仓储管理系统、浏览器工具插件等多个项目的开发与测试。注重代码规范与工程化，擅长需求拆解与功能落地。
+          </p>
+          <ul class="about__meta">
+            <li class="about__meta-item">
+              <svg class="about__meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11z"
+                      fill="none" stroke="currentColor" stroke-width="2" />
+                <circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <span>所在地：中国 · 上海</span>
+            </li>
+            <li class="about__meta-item">
+              <svg class="about__meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" fill="none"
+                      stroke="currentColor" stroke-width="2" />
+                <path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <span>邮箱：13992277850sll@gmail.com</span>
+            </li>
+            <li class="about__meta-item">
+              <svg class="about__meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" fill="none"
+                      stroke="currentColor" stroke-width="2" />
+                <path d="M2 12h20M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"
+                      fill="none" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <span>语言：中文 / 英语</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 技能展示 -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section__title">技能展示</h2>
+
+        <div class="skills__group">
+          <h3 class="skills__group-title">前端基础</h3>
+          <div class="skills__grid">
+            <div class="skill">
+              <div class="skill__header">
+                <span class="skill__name">HTML5 / CSS3 / JavaScript ES6+ / JSP / Android 原生 UI</span>
+                <span class="skill__percent">90%</span>
+              </div>
+              <div class="skill__track">
+                <div class="skill__fill" style="--target: 90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills__group">
+          <h3 class="skills__group-title">框架工具</h3>
+          <div class="skills__grid">
+            <div class="skill">
+              <div class="skill__header">
+                <span class="skill__name">Vue / React / Vite / Struts2 / Hibernate / Android 第三方库</span>
+                <span class="skill__percent">80%</span>
+              </div>
+              <div class="skill__track">
+                <div class="skill__fill" style="--target: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills__group">
+          <h3 class="skills__group-title">后端开发</h3>
+          <div class="skills__grid">
+            <div class="skill">
+              <div class="skill__header">
+                <span class="skill__name">Java / C# / .NET / ASP.NET Core / Java Web / Room ORM</span>
+                <span class="skill__percent">85%</span>
+              </div>
+              <div class="skill__track">
+                <div class="skill__fill" style="--target: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills__group">
+          <h3 class="skills__group-title">数据库</h3>
+          <div class="skills__grid">
+            <div class="skill">
+              <div class="skill__header">
+                <span class="skill__name">SQL Server / MySQL / HQL / SQLite</span>
+                <span class="skill__percent">75%</span>
+              </div>
+              <div class="skill__track">
+                <div class="skill__fill" style="--target: 75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills__group">
+          <h3 class="skills__group-title">工程工具</h3>
+          <div class="skills__grid">
+            <div class="skill">
+              <div class="skill__header">
+                <span class="skill__name">Git / VS / VS Code / Eclipse / Android Studio</span>
+                <span class="skill__percent">85%</span>
+              </div>
+              <div class="skill__track">
+                <div class="skill__fill" style="--target: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills__group">
+          <h3 class="skills__group-title">其他</h3>
+          <div class="skills__grid">
+            <div class="skill">
+              <div class="skill__header">
+                <span class="skill__name">响应式设计 / 软件测试 / 需求分析 / MVC 分层架构</span>
+                <span class="skill__percent">80%</span>
+              </div>
+              <div class="skill__track">
+                <div class="skill__fill" style="--target: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section__title">项目展示</h2>
+        <div class="projects__grid">
+
+          <article class="project-card">
+            <h3 class="project-card__title">电商图片批量下载插件</h3>
+            <p class="project-card__desc">Chrome浏览器扩展，一键提取淘宝/京东/拼多多商品图片，支持画廊预览、勾选筛选与批量PNG下载。</p>
+            <div class="project-card__tags">
+              <span class="tag">Chrome扩展</span>
+              <span class="tag">原生JS</span>
+              <span class="tag">Manifest V3</span>
+            </div>
+            <a class="project-card__link" href="#" aria-label="查看电商图片批量下载插件项目">
+              查看详情
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card__title">网页摘要助手工具</h3>
+            <p class="project-card__desc">基于Node.js的网页内容摘要工具，自动提取网页正文，生成结构化精简摘要。</p>
+            <div class="project-card__tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">原生前端</span>
+            </div>
+            <a class="project-card__link" href="#" aria-label="查看网页摘要助手工具项目">
+              查看详情
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card__title">仓储库存管理系统</h3>
+            <p class="project-card__desc">电商物流仓储管理系统，覆盖入库、出库、库存盘点、BUG回归验证全流程。</p>
+            <div class="project-card__tags">
+              <span class="tag">C#</span>
+              <span class="tag">.NET</span>
+              <span class="tag">SQL Server</span>
+            </div>
+            <a class="project-card__link" href="#" aria-label="查看仓储库存管理系统项目">
+              查看详情
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card__title">个人展示网站</h3>
+            <p class="project-card__desc">纯静态个人作品集网站，深色星空主题，全终端响应式适配。</p>
+            <div class="project-card__tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">Canvas</span>
+              <span class="tag">原生JS</span>
+            </div>
+            <a class="project-card__link" href="#" aria-label="查看个人展示网站项目">
+              查看详情
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card__title">简易电子商城系统</h3>
+            <p class="project-card__desc">采用 MVC 分层架构实现简易电子商城，完成用户注册登录、商品分类查询、Session 购物车、个人信息维护等功能。</p>
+            <div class="project-card__tags">
+              <span class="tag">Java Web</span>
+              <span class="tag">Struts2</span>
+              <span class="tag">Hibernate</span>
+              <span class="tag">MVC</span>
+              <span class="tag">HQL</span>
+              <span class="tag">SQL Server</span>
+              <span class="tag">JSP</span>
+            </div>
+            <a class="project-card__link" href="#" aria-label="查看简易电子商城系统项目">
+              查看详情
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card__title">DMUhotel 酒店预订 Android App</h3>
+            <p class="project-card__desc">基于 Java + Android 原生开发的单机酒店预订应用，实现普通用户与管理员双角色。</p>
+            <div class="project-card__tags">
+              <span class="tag">Java</span>
+              <span class="tag">Android</span>
+              <span class="tag">Room</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">Gradle</span>
+              <span class="tag">Git</span>
+            </div>
+            <a class="project-card__link" href="#" aria-label="查看DMUhotel酒店预订Android App项目">
+              查看详情
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 博客列表 -->
+    <section class="section" id="blog">
+      <div class="container">
+        <h2 class="section__title">博客</h2>
+        <ul class="blog__list">
+
+          <li class="blog-item">
+            <a class="blog-item__link" href="#">
+              <h3 class="blog-item__title">Chrome Manifest V3 扩展开发踩坑总结</h3>
+              <p class="blog-item__summary">总结Manifest V3版本权限配置、Service Worker生命周期、跨域处理的开发经验。</p>
+              <div class="blog-item__tags" style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0">
+                <span class="tag">浏览器扩展</span>
+                <span class="tag">前端</span>
+              </div>
+              <time class="blog-item__date" datetime="2026-09-15">2026-09-15</time>
+            </a>
+          </li>
+
+          <li class="blog-item">
+            <a class="blog-item__link" href="#">
+              <h3 class="blog-item__title">纯静态网站性能优化实践</h3>
+              <p class="blog-item__summary">从零依赖静态网站出发，分享加载速度、Canvas动画性能、响应式适配的优化方法。</p>
+              <div class="blog-item__tags" style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0">
+                <span class="tag">性能优化</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <time class="blog-item__date" datetime="2026-08-22">2026-08-22</time>
+            </a>
+          </li>
+
+          <li class="blog-item">
+            <a class="blog-item__link" href="#">
+              <h3 class="blog-item__title">C# .NET 仓储系统开发笔记</h3>
+              <p class="blog-item__summary">记录仓储管理系统的数据库设计、业务逻辑实现、多线程并发处理要点。</p>
+              <div class="blog-item__tags" style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0">
+                <span class="tag">C#</span>
+                <span class="tag">.NET</span>
+                <span class="tag">后端</span>
+              </div>
+              <time class="blog-item__date" datetime="2026-07-10">2026-07-10</time>
+            </a>
+          </li>
+
+          <li class="blog-item">
+            <a class="blog-item__link" href="#">
+              <h3 class="blog-item__title">Canvas 星空粒子实现与性能降级</h3>
+              <p class="blog-item__summary">详解Canvas粒子动画实现原理，以及低端设备的帧率优化与降级方案。</p>
+              <div class="blog-item__tags" style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0">
+                <span class="tag">Canvas</span>
+                <span class="tag">动画</span>
+                <span class="tag">性能</span>
+              </div>
+              <time class="blog-item__date" datetime="2026-06-18">2026-06-18</time>
+            </a>
+          </li>
+
+          <li class="blog-item">
+            <a class="blog-item__link" href="#">
+              <h3 class="blog-item__title">Git 版本控制工作流最佳实践</h3>
+              <p class="blog-item__summary">介绍团队开发Git工作流，包含分支管理、提交规范、代码评审完整流程。</p>
+              <div class="blog-item__tags" style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0">
+                <span class="tag">Git</span>
+                <span class="tag">工程化</span>
+              </div>
+              <time class="blog-item__date" datetime="2026-05-25">2026-05-25</time>
+            </a>
+          </li>
+
+          <li class="blog-item">
+            <a class="blog-item__link" href="#">
+              <h3 class="blog-item__title">响应式布局断点设计思路</h3>
+              <p class="blog-item__summary">讲解移动优先响应式设计原则，常见断点选择与多终端布局适配技巧。</p>
+              <div class="blog-item__tags" style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0">
+                <span class="tag">CSS</span>
+                <span class="tag">响应式</span>
+                <span class="tag">设计</span>
+              </div>
+              <time class="blog-item__date" datetime="2026-04-30">2026-04-30</time>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <p class="footer__copyright">© 2026 石凌澜 · 保留所有权利</p>
+      <div class="footer__social">
+        <!-- GitHub 社交链接 -->
+        <a class="footer__social-link" href="https://github.com/watercarrrrrd" aria-label="GitHub 主页">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .26.18.57.69.48A10 10 0 0 0 12 2z"
+                  fill="currentColor" />
+          </svg>
+        </a>
+        <!-- 邮件链接 -->
+        <a class="footer__social-link" href="mailto:13992277850sll@gmail.com" aria-label="发送邮件">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" fill="none"
+                  stroke="currentColor" stroke-width="2" />
+            <path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
